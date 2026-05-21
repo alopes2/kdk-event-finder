@@ -382,16 +382,34 @@ p {
   font-weight: 900;
 }
 
+.stage-chip-group {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  min-width: 0;
+}
+
 .stage-chip {
   display: inline-flex;
   align-items: center;
-  max-width: min(100%, 210px);
+  max-width: min(100%, 180px);
   border: 1px solid var(--stage-border, rgba(255, 90, 69, 0.28));
   border-radius: 999px;
   padding: 5px 9px;
   background: var(--stage-surface, #fff0cf);
   color: var(--stage-text, #8a250f);
   line-height: 1.1;
+}
+
+.stage-chip--sub {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.stage-separator {
+  color: var(--stage-text, #8a250f);
+  font-size: 0.76rem;
+  font-weight: 950;
 }
 
 .save-button {

@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { events, type EventType } from "../data/events";
 import type { EventGroups, FilterState } from "../types";
+import { getEventLocationLabel } from "./location";
 
 export const defaultFilters: FilterState = {
   days: [],
@@ -43,7 +44,7 @@ export function useEventGroups(filters: FilterState, savedEventIds: Set<string>)
 
     const filtered = events.filter((event) => {
       const matchesDay = filters.days.length === 0 || filters.days.includes(event.day);
-      const matchesStage = filters.stages.length === 0 || filters.stages.includes(event.stage);
+      const matchesStage = filters.stages.length === 0 || filters.stages.includes(getEventLocationLabel(event));
       const matchesType = filters.types.length === 0 || filters.types.some((type) => event.types.includes(type));
       const matchesTime = event.time >= filters.startTime && event.time <= filters.endTime;
       const matchesSaved = !filters.savedOnly || savedEventIds.has(event.id);

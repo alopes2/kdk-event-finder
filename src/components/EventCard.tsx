@@ -21,7 +21,17 @@ export function EventCard({ event, saved, onToggleSaved }: EventCardProps) {
         <Heart size={18} fill="currentColor" aria-hidden="true" />
       </button>
       <div className="event-card__topline">
-        <span className="stage-chip">{event.stage}</span>
+        <span className="stage-chip-group" aria-label={event.subStage ? `${event.stage} greater than ${event.subStage}` : event.stage}>
+          <span className="stage-chip">{event.stage}</span>
+          {event.subStage ? (
+            <>
+              <span className="stage-separator" aria-hidden="true">
+                &gt;
+              </span>
+              <span className="stage-chip stage-chip--sub">{event.subStage}</span>
+            </>
+          ) : null}
+        </span>
         {event.endTime ? <span>{event.time}-{event.endTime}</span> : <span>{event.time}</span>}
       </div>
       <h3>{event.name}</h3>

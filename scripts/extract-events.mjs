@@ -113,9 +113,18 @@ function buildEvents($, stages) {
 
   contents.forEach((content, stageIndex) => {
     const stage = lineupStages[stageIndex] ?? `Stage ${stageIndex + 1}`;
+    const sectionNames = $(content)
+      .children(".kdk-tabs__sections")
+      .find(".kdk-tabs__section-btn")
+      .toArray()
+      .map((button) => cleanHtmlText($, button));
+    const panels = $(content).children(".kdk-tabs__section-panel").toArray();
 
-    $(content)
-      .find(".kdk-tabs__lineup-day-group")
+    panels.forEach((panel, panelIndex) => {
+      const subStage = sectionNames.length > 1 ? sectionNames[panelIndex] : undefined;
+
+      $(panel)
+        .find(".kdk-tabs__lineup-day-group")
       .each((_, group) => {
         const dayInfo = parseDay(cleanHtmlText($, $(group).find(".kdk-tabs__lineup-day").first()));
         if (!dayInfo) return;
@@ -142,12 +151,14 @@ function buildEvents($, stages) {
               name,
               artist,
               stage,
+              ...(subStage ? { subStage } : {}),
               types: inferTypes(name, style, description, stage),
               ...(style ? { sourceText: style } : {}),
               ...(description ? { description } : {}),
             });
           });
       });
+    });
   });
 
   return events.sort((a, b) => {
@@ -172,6 +183,7 @@ const source = `export type EventType = {
   name: string;
   artist: string;
   stage: string;
+  subStage?: string;
   types: string[];
   sourceText?: string;
   description?: string;

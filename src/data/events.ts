@@ -8,6 +8,7 @@ export type EventType = {
   name: string;
   artist: string;
   stage: string;
+  subStage?: string;
   types: string[];
   sourceText?: string;
   description?: string;
@@ -67,6 +68,7 @@ export const events: EventType[] = [
     "name": "100% Tempelhof",
     "artist": "100% Tempelhof",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -82,6 +84,7 @@ export const events: EventType[] = [
     "name": "Batik mit Blumen",
     "artist": "Batik mit Blumen",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Workshop"
     ],
@@ -96,6 +99,7 @@ export const events: EventType[] = [
     "name": "Bike Stunt Berlin",
     "artist": "Bike Stunt Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -110,6 +114,7 @@ export const events: EventType[] = [
     "name": "Die Sonderpreis-Gewinner:innen des Landeswettbewerbs Jugend musiziert (Pop)",
     "artist": "Die Sonderpreis-Gewinner:innen des Landeswettbewerbs Jugend musiziert (Pop)",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Latin",
       "Pop"
@@ -127,6 +132,7 @@ export const events: EventType[] = [
     "name": "Paint The Moment",
     "artist": "Paint The Moment",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Workshop"
     ],
@@ -142,6 +148,7 @@ export const events: EventType[] = [
     "name": "Sport Connection Berlin",
     "artist": "Sport Connection Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -157,6 +164,7 @@ export const events: EventType[] = [
     "name": "Umsonstladen",
     "artist": "Umsonstladen",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -185,6 +193,7 @@ export const events: EventType[] = [
     "name": "Groove & Connect",
     "artist": "Groove & Connect",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Hip-Hop",
       "Performance"
@@ -200,6 +209,7 @@ export const events: EventType[] = [
     "name": "Seifenblasen-Instrumente bauen mit den Bubble Brothers",
     "artist": "Seifenblasen-Instrumente bauen mit den Bubble Brothers",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Workshop"
     ],
@@ -271,6 +281,7 @@ export const events: EventType[] = [
     "name": "Bike Stunt Berlin",
     "artist": "Bike Stunt Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -314,6 +325,7 @@ export const events: EventType[] = [
     "name": "Feierabend Cumbia",
     "artist": "Feierabend Cumbia",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Latin"
     ],
@@ -404,6 +416,7 @@ export const events: EventType[] = [
     "name": "0 dB Silent Riots",
     "artist": "0 dB Silent Riots",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Electro"
     ],
@@ -519,6 +532,7 @@ export const events: EventType[] = [
     "name": "Back 2 Body – the Art of Connection",
     "artist": "Back 2 Body – the Art of Connection",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Workshop"
     ],
@@ -591,6 +605,7 @@ export const events: EventType[] = [
     "name": "Dave Dinger",
     "artist": "Dave Dinger",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Electro"
     ],
@@ -769,6 +784,7 @@ export const events: EventType[] = [
     "name": "100% Tempelhof",
     "artist": "100% Tempelhof",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -783,6 +799,7 @@ export const events: EventType[] = [
     "name": "Banan'O'Rama",
     "artist": "Banan'O'Rama",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Performance"
     ],
@@ -798,6 +815,7 @@ export const events: EventType[] = [
     "name": "Batik mit Blumen",
     "artist": "Batik mit Blumen",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Workshop"
     ],
@@ -813,6 +831,7 @@ export const events: EventType[] = [
     "name": "Paint The Moment",
     "artist": "Paint The Moment",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Workshop"
     ],
@@ -828,6 +847,7 @@ export const events: EventType[] = [
     "name": "Sport Connection Berlin",
     "artist": "Sport Connection Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -843,6 +863,7 @@ export const events: EventType[] = [
     "name": "Stadtteilkomitees Berlin",
     "artist": "Stadtteilkomitees Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -858,6 +879,7 @@ export const events: EventType[] = [
     "name": "Umsonstladen",
     "artist": "Umsonstladen",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -900,6 +922,7 @@ export const events: EventType[] = [
     "name": "Bike Stunt Berlin",
     "artist": "Bike Stunt Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -914,6 +937,7 @@ export const events: EventType[] = [
     "name": "Grupo Chile Berlin e.V.",
     "artist": "Grupo Chile Berlin e.V.",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Performance"
     ],
@@ -929,6 +953,7 @@ export const events: EventType[] = [
     "name": "Seifenblasen-Instrumente bauen mit den Bubble Brothers",
     "artist": "Seifenblasen-Instrumente bauen mit den Bubble Brothers",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Workshop"
     ],
@@ -1042,6 +1067,7 @@ export const events: EventType[] = [
     "name": "100% Tempelhofer Feld und Berliner Akteure",
     "artist": "100% Tempelhofer Feld und Berliner Akteure",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Other"
     ],
@@ -1113,6 +1139,7 @@ export const events: EventType[] = [
     "name": "i BiRiCHiNi",
     "artist": "i BiRiCHiNi",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Other"
     ],
@@ -1172,6 +1199,7 @@ export const events: EventType[] = [
     "name": "Bike Stunt Berlin",
     "artist": "Bike Stunt Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -1243,6 +1271,7 @@ export const events: EventType[] = [
     "name": "Wayra Puka",
     "artist": "Wayra Puka",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Pop"
     ],
@@ -1332,6 +1361,7 @@ export const events: EventType[] = [
     "name": "Daiana Lou",
     "artist": "Daiana Lou",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Pop"
     ],
@@ -1450,6 +1480,7 @@ export const events: EventType[] = [
     "name": "Bike Stunt Berlin",
     "artist": "Bike Stunt Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -1480,6 +1511,7 @@ export const events: EventType[] = [
     "name": "ALTES HAUS",
     "artist": "ALTES HAUS",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Electro",
       "Performance"
@@ -1525,6 +1557,7 @@ export const events: EventType[] = [
     "name": "0 dB Silent Riots",
     "artist": "0 dB Silent Riots",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Electro"
     ],
@@ -1625,6 +1658,7 @@ export const events: EventType[] = [
     "name": "Puto Production",
     "artist": "Puto Production",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Electro",
       "Performance"
@@ -1747,6 +1781,7 @@ export const events: EventType[] = [
     "name": "Discopunkx",
     "artist": "Discopunkx",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Electro"
     ],
@@ -1936,6 +1971,7 @@ export const events: EventType[] = [
     "name": "Banan'O'Rama",
     "artist": "Banan'O'Rama",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Performance"
     ],
@@ -1951,6 +1987,7 @@ export const events: EventType[] = [
     "name": "Batik mit Blumen",
     "artist": "Batik mit Blumen",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Workshop"
     ],
@@ -1966,6 +2003,7 @@ export const events: EventType[] = [
     "name": "Paint The Moment",
     "artist": "Paint The Moment",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Workshop"
     ],
@@ -1981,6 +2019,7 @@ export const events: EventType[] = [
     "name": "Sport Connection Berlin",
     "artist": "Sport Connection Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -1996,6 +2035,7 @@ export const events: EventType[] = [
     "name": "Stadtteilkomitees Berlin",
     "artist": "Stadtteilkomitees Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -2011,6 +2051,7 @@ export const events: EventType[] = [
     "name": "Umsonstladen",
     "artist": "Umsonstladen",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -2025,6 +2066,7 @@ export const events: EventType[] = [
     "name": "Seifenblasen-Instrumente bauen mit den Bubble Brothers",
     "artist": "Seifenblasen-Instrumente bauen mit den Bubble Brothers",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Workshop"
     ],
@@ -2054,6 +2096,7 @@ export const events: EventType[] = [
     "name": "Bike Stunt Berlin",
     "artist": "Bike Stunt Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -2068,6 +2111,7 @@ export const events: EventType[] = [
     "name": "Mukunda Cruz",
     "artist": "Mukunda Cruz",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Latin",
       "Jazz",
@@ -2174,6 +2218,7 @@ export const events: EventType[] = [
     "name": "The Shallaras",
     "artist": "The Shallaras",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Electro",
       "Hip-Hop",
@@ -2277,6 +2322,7 @@ export const events: EventType[] = [
     "name": "Bike Stunt Berlin",
     "artist": "Bike Stunt Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -2391,6 +2437,7 @@ export const events: EventType[] = [
     "name": "OZZA36",
     "artist": "OZZA36",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Hip-Hop"
     ],
@@ -2465,6 +2512,7 @@ export const events: EventType[] = [
     "name": "SektSpätStück",
     "artist": "SektSpätStück",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Other"
     ],
@@ -2551,6 +2599,7 @@ export const events: EventType[] = [
     "name": "Bike Stunt Berlin",
     "artist": "Bike Stunt Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -2565,6 +2614,7 @@ export const events: EventType[] = [
     "name": "BYDS",
     "artist": "BYDS",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Latin",
       "Electro",
@@ -2674,6 +2724,7 @@ export const events: EventType[] = [
     "name": "0 dB Silent Riots",
     "artist": "0 dB Silent Riots",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Electro"
     ],
@@ -2730,6 +2781,7 @@ export const events: EventType[] = [
     "name": "DJ Marla Roots",
     "artist": "DJ Marla Roots",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Brazilian",
       "Electro",
@@ -2879,6 +2931,7 @@ export const events: EventType[] = [
     "name": "DJ Batero",
     "artist": "DJ Batero",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Salsa",
       "Latin",
@@ -3071,6 +3124,7 @@ export const events: EventType[] = [
     "name": "100% Tempelhof",
     "artist": "100% Tempelhof",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -3086,6 +3140,7 @@ export const events: EventType[] = [
     "name": "Batik mit Blumen",
     "artist": "Batik mit Blumen",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Workshop"
     ],
@@ -3101,6 +3156,7 @@ export const events: EventType[] = [
     "name": "Paint The Moment",
     "artist": "Paint The Moment",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Workshop"
     ],
@@ -3116,6 +3172,7 @@ export const events: EventType[] = [
     "name": "Sport Connection Berlin",
     "artist": "Sport Connection Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -3131,6 +3188,7 @@ export const events: EventType[] = [
     "name": "Umsonstladen",
     "artist": "Umsonstladen",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -3145,6 +3203,7 @@ export const events: EventType[] = [
     "name": "Seifenblasen-Instrumente bauen mit den Bubble Brothers",
     "artist": "Seifenblasen-Instrumente bauen mit den Bubble Brothers",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Workshop"
     ],
@@ -3174,6 +3233,7 @@ export const events: EventType[] = [
     "name": "Bike Stunt Berlin",
     "artist": "Bike Stunt Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -3188,6 +3248,7 @@ export const events: EventType[] = [
     "name": "India Waale",
     "artist": "India Waale",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Pop",
       "Performance"
@@ -3305,6 +3366,7 @@ export const events: EventType[] = [
     "name": "D!E GÄNG (Luna & Chaja)",
     "artist": "D!E GÄNG (Luna & Chaja)",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Caribbean",
       "Reggae",
@@ -3323,6 +3385,7 @@ export const events: EventType[] = [
     "name": "Qi Gong und Viet Vo Dao Kung Fu Tiger",
     "artist": "Qi Gong und Viet Vo Dao Kung Fu Tiger",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Workshop"
     ],
@@ -3446,6 +3509,7 @@ export const events: EventType[] = [
     "name": "# WAS BEWEGT DICH",
     "artist": "# WAS BEWEGT DICH",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Performance"
     ],
@@ -3461,6 +3525,7 @@ export const events: EventType[] = [
     "name": "Bike Stunt Berlin",
     "artist": "Bike Stunt Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],
@@ -3535,6 +3600,7 @@ export const events: EventType[] = [
     "name": "TANZEN3000 mit Tal Siano",
     "artist": "TANZEN3000 mit Tal Siano",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Performance",
       "Workshop"
@@ -3597,6 +3663,7 @@ export const events: EventType[] = [
     "name": "Qi Gong und Viet Vo Dao Kung Fu HAI TAN",
     "artist": "Qi Gong und Viet Vo Dao Kung Fu HAI TAN",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Workshop"
     ],
@@ -3641,6 +3708,7 @@ export const events: EventType[] = [
     "name": "PASCAL de Lacaze",
     "artist": "PASCAL de Lacaze",
     "stage": "shantYtown",
+    "subStage": "Arena Stage",
     "types": [
       "Caribbean",
       "Electro",
@@ -3688,6 +3756,7 @@ export const events: EventType[] = [
     "name": "Bike Stunt Berlin",
     "artist": "Bike Stunt Berlin",
     "stage": "shantYtown",
+    "subStage": "Aktionscamp",
     "types": [
       "Other"
     ],

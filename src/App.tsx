@@ -4,6 +4,7 @@ import { events } from "./data/events";
 import { EventResults } from "./components/EventResults";
 import { FiltersPanel } from "./components/FiltersPanel";
 import { countGroupedEvents, defaultFilters, uniqueSorted, useEventGroups } from "./utils/filters";
+import { getEventLocationLabel } from "./utils/location";
 import { readSavedEventIds, writeSavedEventIds } from "./utils/savedEvents";
 import type { FilterState } from "./types";
 
@@ -20,7 +21,7 @@ export function App() {
     [],
   );
   const types = useMemo(() => uniqueSorted(events.flatMap((event) => event.types)), []);
-  const stages = useMemo(() => uniqueSorted(events.map((event) => event.stage)), []);
+  const stages = useMemo(() => uniqueSorted(events.map((event) => getEventLocationLabel(event))), []);
   const visibleCount = countGroupedEvents(eventGroups);
 
   useEffect(() => {
