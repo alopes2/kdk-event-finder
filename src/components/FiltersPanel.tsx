@@ -1,4 +1,4 @@
-import { CalendarDays, Clock, Heart, MapPin, Music2, RotateCcw, Search, X } from "lucide-react";
+import { CalendarDays, ChevronDown, Clock, Heart, MapPin, Music2, RotateCcw, Search, X } from "lucide-react";
 import type { DayOption, FilterState } from "../types";
 import { timeOptions, timeToIndex, toggleValue } from "../utils/filters";
 import { Chip } from "./Chip";
@@ -67,6 +67,10 @@ export function FiltersPanel({ filters, visibleCount, savedCount, days, types, s
               placeholder="Search name, artist, or stage"
             />
           </label>
+          <p className="filters__scroll-hint">
+            Scroll for more filters
+            <ChevronDown size={14} aria-hidden="true" />
+          </p>
         </div>
 
         <div className="filters__scroll">
