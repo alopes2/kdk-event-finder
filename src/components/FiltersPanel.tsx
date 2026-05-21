@@ -67,9 +67,9 @@ export function FiltersPanel({ filters, visibleCount, savedCount, days, types, s
               placeholder="Search name, artist, or stage"
             />
           </label>
-          <p className="filters__scroll-hint" aria-hidden="true">
+          <p className="filters__scroll-hint">
             Scroll for more filters
-            <ChevronDown size={14} />
+            <ChevronDown size={14} aria-hidden="true" />
           </p>
         </div>
 
