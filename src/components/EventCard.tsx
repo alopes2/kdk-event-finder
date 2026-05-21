@@ -1,5 +1,6 @@
 import { Heart } from "lucide-react";
 import type { EventType } from "../data/events";
+import { getStageStyle } from "../utils/stageColors";
 
 type EventCardProps = {
   event: EventType;
@@ -9,7 +10,7 @@ type EventCardProps = {
 
 export function EventCard({ event, saved, onToggleSaved }: EventCardProps) {
   return (
-    <article className="event-card">
+    <article className="event-card" style={getStageStyle(event.stage)}>
       <button
         className={saved ? "save-button save-button--active" : "save-button"}
         type="button"
