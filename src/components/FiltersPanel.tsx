@@ -1,4 +1,4 @@
-import { CalendarDays, Clock, Heart, MapPin, Music2, RotateCcw, Search } from "lucide-react";
+import { CalendarDays, Clock, Heart, MapPin, Music2, RotateCcw, Search, X } from "lucide-react";
 import type { DayOption, FilterState } from "../types";
 import { timeOptions, timeToIndex, toggleValue } from "../utils/filters";
 import { Chip } from "./Chip";
@@ -13,9 +13,11 @@ type FiltersPanelProps = {
   stages: string[];
   onUpdate: (patch: Partial<FilterState>) => void;
   onReset: () => void;
+  mobileOpen?: boolean;
+  onMobileClose?: () => void;
 };
 
-export function FiltersPanel({ filters, visibleCount, savedCount, days, types, stages, onUpdate, onReset }: FiltersPanelProps) {
+export function FiltersPanel({ filters, visibleCount, savedCount, days, types, stages, onUpdate, onReset, mobileOpen, onMobileClose }: FiltersPanelProps) {
   const updateStartTime = (index: number) => {
     const nextIndex = Math.min(index, timeToIndex(filters.endTime));
     onUpdate({ startTime: timeOptions[nextIndex] });
@@ -27,31 +29,47 @@ export function FiltersPanel({ filters, visibleCount, savedCount, days, types, s
   };
 
   return (
-    <section className="filters" aria-label="Event filters">
-      <div className="filters__sticky">
-        <div className="filter-head">
-          <div>
-            <p className="eyebrow">Filters</p>
-            <h2>{visibleCount} events</h2>
+    <>
+      {mobileOpen && (
+        <div
+          className="filters-overlay"
+          onClick={onMobileClose}
+          onKeyDown={(e) => (e.key === "Enter" || e.key === "Escape") && onMobileClose?.()}
+          role="button"
+          tabIndex={0}
+          aria-label="Close filters"
+        />
+      )}
+      <section className={`filters${mobileOpen ? " filters--open" : ""}`} id="filters-panel" aria-label="Event filters">
+        <div className="filters__sticky">
+          <div className="filter-head">
+            <div>
+              <p className="eyebrow">Filters</p>
+              <h2>{visibleCount} events</h2>
+            </div>
+            <div className="filter-head__actions">
+              <button className="icon-button" type="button" onClick={onReset} aria-label="Reset filters">
+                <RotateCcw size={18} aria-hidden="true" />
+              </button>
+              <button className="icon-button filters__close" type="button" onClick={onMobileClose} aria-label="Close filters">
+                <X size={18} aria-hidden="true" />
+              </button>
+            </div>
           </div>
-          <button className="icon-button" type="button" onClick={onReset} aria-label="Reset filters">
-            <RotateCcw size={18} aria-hidden="true" />
-          </button>
+
+          <label className="search-field">
+            <Search size={18} aria-hidden="true" />
+            <span className="sr-only">Search by name</span>
+            <input
+              type="search"
+              value={filters.query}
+              onChange={(event) => onUpdate({ query: event.target.value })}
+              placeholder="Search name, artist, or stage"
+            />
+          </label>
         </div>
 
-        <label className="search-field">
-          <Search size={18} aria-hidden="true" />
-          <span className="sr-only">Search by name</span>
-          <input
-            type="search"
-            value={filters.query}
-            onChange={(event) => onUpdate({ query: event.target.value })}
-            placeholder="Search name, artist, or stage"
-          />
-        </label>
-      </div>
-
-      <div className="filters__scroll">
+        <div className="filters__scroll">
         <FilterGroup title="Saved" icon={<Heart size={18} aria-hidden="true" />}>
           <Chip active={filters.savedOnly} onClick={() => onUpdate({ savedOnly: !filters.savedOnly })}>
             Saved events {savedCount}
@@ -112,5 +130,6 @@ export function FiltersPanel({ filters, visibleCount, savedCount, days, types, s
         </FilterGroup>
       </div>
     </section>
+    </>
   );
 }

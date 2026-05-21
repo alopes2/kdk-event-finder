@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Sparkles } from "lucide-react";
+import { Sparkles, SlidersHorizontal } from "lucide-react";
 import { events } from "./data/events";
 import { EventResults } from "./components/EventResults";
 import { FiltersPanel } from "./components/FiltersPanel";
@@ -11,6 +11,7 @@ import type { FilterState } from "./types";
 export function App() {
   const [filters, setFilters] = useState(defaultFilters);
   const [savedEventIds, setSavedEventIds] = useState<string[]>(readSavedEventIds);
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const savedEventIdSet = useMemo(() => new Set(savedEventIds), [savedEventIds]);
   const eventGroups = useEventGroups(filters, savedEventIdSet);
   const days = useMemo(
@@ -27,6 +28,15 @@ export function App() {
   useEffect(() => {
     writeSavedEventIds(savedEventIds);
   }, [savedEventIds]);
+
+  useEffect(() => {
+    if (!filtersOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setFiltersOpen(false);
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [filtersOpen]);
 
   const updateFilters = (patch: Partial<FilterState>) => setFilters((current) => ({ ...current, ...patch }));
   const toggleSavedEvent = (eventId: string) => {
@@ -55,10 +65,24 @@ export function App() {
           stages={stages}
           onUpdate={updateFilters}
           onReset={() => setFilters(defaultFilters)}
+          mobileOpen={filtersOpen}
+          onMobileClose={() => setFiltersOpen(false)}
         />
 
         <EventResults eventGroups={eventGroups} visibleCount={visibleCount} savedEventIds={savedEventIdSet} onToggleSaved={toggleSavedEvent} />
       </main>
+
+      <button
+        className="filters-fab"
+        type="button"
+        onClick={() => setFiltersOpen(true)}
+        aria-label="Open filters"
+        aria-expanded={filtersOpen}
+        aria-controls="filters-panel"
+      >
+        <SlidersHorizontal size={18} aria-hidden="true" />
+        Filters
+      </button>
 
       <footer className="site-footer">
         <p>
