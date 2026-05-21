@@ -108,16 +108,10 @@ button {
 .main-content {
   display: grid;
   grid-template-columns: minmax(250px, 320px) minmax(0, 1fr);
-  grid-template-rows: auto minmax(0, 1fr);
   gap: 24px;
-  padding: 44px 0 36px;
+  padding: 24px 0 36px;
   flex: 1;
   min-height: calc(100dvh - 72px);
-}
-
-.intro {
-  grid-column: 1 / -1;
-  max-width: 850px;
 }
 
 .eyebrow {
@@ -134,20 +128,6 @@ h2,
 h3,
 p {
   margin-top: 0;
-}
-
-h1 {
-  max-width: 760px;
-  margin-bottom: 14px;
-  font-size: clamp(2.4rem, 7vw, 5rem);
-  line-height: 0.94;
-}
-
-.intro-copy {
-  max-width: 680px;
-  color: var(--muted);
-  font-size: 1.12rem;
-  line-height: 1.6;
 }
 
 .filters {
@@ -380,11 +360,12 @@ h1 {
 }
 
 .event-card {
+  position: relative;
   min-height: 178px;
   border: 1px solid var(--line);
   border-left: 7px solid var(--coral);
   border-radius: 8px;
-  padding: 15px;
+  padding: 15px 15px 52px;
   background: var(--paper);
   box-shadow: 0 8px 22px rgba(58, 39, 13, 0.08);
   animation: card-in 260ms ease both;
@@ -407,6 +388,41 @@ h1 {
   color: var(--muted);
   font-size: 0.84rem;
   font-weight: 900;
+}
+
+.save-button {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid rgba(35, 28, 18, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: rgba(35, 28, 18, 0.38);
+  transition:
+    transform 160ms ease,
+    color 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.save-button:hover {
+  transform: translateY(-1px) scale(1.03);
+  color: var(--coral);
+}
+
+.save-button:focus-visible {
+  outline: 3px solid rgba(255, 90, 69, 0.3);
+  outline-offset: 3px;
+}
+
+.save-button--active {
+  border-color: rgba(255, 90, 69, 0.3);
+  background: #ffe6df;
+  color: var(--coral);
 }
 
 .event-card h3 {
@@ -495,7 +511,6 @@ h1 {
 @media (max-width: 900px) {
   .main-content {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
     min-height: 0;
   }
 
@@ -541,11 +556,7 @@ h1 {
   }
 
   .main-content {
-    padding-top: 32px;
-  }
-
-  h1 {
-    font-size: 2.75rem;
+    padding-top: 20px;
   }
 
   .time-group {
