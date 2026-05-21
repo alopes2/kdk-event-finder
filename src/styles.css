@@ -452,20 +452,11 @@ h1 {
 }
 
 .site-footer {
-  display: grid;
-  gap: 8px;
+  text-align: center;
   border-top: 1px solid var(--line);
   padding: 24px 0 34px;
   color: var(--muted);
   font-size: 0.92rem;
-}
-
-.site-footer p {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 5px;
-  margin: 0;
 }
 
 .sr-only {
