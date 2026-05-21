@@ -1,6 +1,6 @@
-import { Sparkles } from "lucide-react";
-import type { EventGroups } from "../types";
-import { EventCard } from "./EventCard";
+import { Sparkles } from 'lucide-react';
+import type { EventGroups } from '../types';
+import { EventCard } from './EventCard';
 
 type EventResultsProps = {
   eventGroups: EventGroups;
@@ -9,7 +9,12 @@ type EventResultsProps = {
   onToggleSaved: (eventId: string) => void;
 };
 
-export function EventResults({ eventGroups, visibleCount, savedEventIds, onToggleSaved }: EventResultsProps) {
+export function EventResults({
+  eventGroups,
+  visibleCount,
+  savedEventIds,
+  onToggleSaved,
+}: EventResultsProps) {
   return (
     <section className="results" aria-label="Events">
       <div className="results__content">
@@ -28,7 +33,12 @@ export function EventResults({ eventGroups, visibleCount, savedEventIds, onToggl
                   <div className="time-stamp">{time}</div>
                   <div className="event-grid">
                     {group.map((event) => (
-                      <EventCard key={event.id} event={event} saved={savedEventIds.has(event.id)} onToggleSaved={onToggleSaved} />
+                      <EventCard
+                        key={event.id}
+                        event={event}
+                        saved={savedEventIds.has(event.id)}
+                        onToggleSaved={onToggleSaved}
+                      />
                     ))}
                   </div>
                 </div>
