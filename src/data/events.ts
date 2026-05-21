@@ -534,7 +534,7 @@ export const events: EventType[] = [
     "artist": "DENIM",
     "stage": "Sound Avenue",
     "types": [
-      "African"
+      "Afro"
     ],
     "sourceText": "Afrofuturismus"
   },
@@ -620,7 +620,7 @@ export const events: EventType[] = [
     "artist": "DJ Emo",
     "stage": "Sound Avenue",
     "types": [
-      "African",
+      "Afro",
       "Electro"
     ],
     "sourceText": "Afrobeat, Highlife, Rhumba, Soukous, Makossa"
@@ -1129,7 +1129,7 @@ export const events: EventType[] = [
     "artist": "Palo Santo",
     "stage": "Klang Plaza",
     "types": [
-      "African",
+      "Afro",
       "Latin"
     ],
     "sourceText": "Bullerengue, Afro-Colombian, Cumbia",
@@ -1187,7 +1187,7 @@ export const events: EventType[] = [
     "artist": "Tiliboo",
     "stage": "Sound Avenue",
     "types": [
-      "African",
+      "Afro",
       "Jazz"
     ],
     "sourceText": "Fusion-Sound der westafrikanische Mandinka-Kultur"
@@ -1349,7 +1349,7 @@ export const events: EventType[] = [
     "stage": "Sound Avenue",
     "types": [
       "Cuban",
-      "African",
+      "Afro",
       "Reggae"
     ],
     "sourceText": "High-Life, Soukouss, Rumba, Reggae"
@@ -1422,7 +1422,7 @@ export const events: EventType[] = [
     "artist": "Candumbe",
     "stage": "Rasen in Aktion",
     "types": [
-      "African"
+      "Afro"
     ],
     "sourceText": "Afro-uruguayischer Candombe & afro-chilenischer Tumbe",
     "description": "CANDUMBE vereint afro-uruguayischen Candombe und afro-chilenischen Tumbe in einer kraftvollen musikalischen und tänzerischen Begegnung. Trommeln, Bewegung und kollektive Energie schaffen einen interkulturellen Raum, der afrikanisches Erbe im Cono Sur lebendig macht"
@@ -1611,7 +1611,7 @@ export const events: EventType[] = [
     "stage": "Rasen in Aktion",
     "types": [
       "Brazilian",
-      "African"
+      "Afro"
     ],
     "sourceText": "Afro-brasilianische Perkussion",
     "description": "Ein Projekt von Kerstin Schreier und Christian Sluzalek. Zwei Gruppen – ein Sound. Wir spielen einen bunten Mix aus modernen und traditionellen brasilianischen Grooves gewürzt mit eigenen Arrangements."
@@ -1687,7 +1687,7 @@ export const events: EventType[] = [
     "artist": "Toshin",
     "stage": "Sound Avenue",
     "types": [
-      "African",
+      "Afro",
       "Hip-Hop",
       "Pop"
     ],
@@ -1718,7 +1718,7 @@ export const events: EventType[] = [
     "artist": "Oku & Baba Shango",
     "stage": "Neue Pumpe",
     "types": [
-      "African"
+      "Afro"
     ],
     "sourceText": "Afrofunk & Afrobeat"
   },
@@ -2292,7 +2292,7 @@ export const events: EventType[] = [
     "artist": "Buba Diakité",
     "stage": "Sound Avenue",
     "types": [
-      "African",
+      "Afro",
       "Reggae"
     ],
     "sourceText": "African Reggae"
@@ -2409,7 +2409,7 @@ export const events: EventType[] = [
     "types": [
       "Cuban",
       "Brazilian",
-      "Latin",
+      "Caribbean",
       "Jazz"
     ],
     "sourceText": "Transatlantic Samba Ensemble",
@@ -2614,7 +2614,7 @@ export const events: EventType[] = [
     "artist": "Kingsley Q.",
     "stage": "Sound Avenue",
     "types": [
-      "African",
+      "Afro",
       "Hip-Hop",
       "Pop"
     ],
@@ -2751,6 +2751,7 @@ export const events: EventType[] = [
     "types": [
       "Salsa",
       "Cuban",
+      "Caribbean",
       "Latin",
       "Jazz"
     ],
@@ -3305,6 +3306,7 @@ export const events: EventType[] = [
     "artist": "D!E GÄNG (Luna & Chaja)",
     "stage": "shantYtown",
     "types": [
+      "Caribbean",
       "Reggae",
       "Hip-Hop",
       "Performance"
@@ -3352,7 +3354,8 @@ export const events: EventType[] = [
     "stage": "Klang Plaza",
     "types": [
       "Brazilian",
-      "African",
+      "Afro",
+      "Caribbean",
       "Latin",
       "Performance"
     ],
@@ -3370,7 +3373,7 @@ export const events: EventType[] = [
     "stage": "Rasen in Aktion",
     "types": [
       "Brazilian",
-      "African",
+      "Afro",
       "Workshop"
     ],
     "sourceText": "MITMACH-Workshop für Kinder ab 4 Jahren",
@@ -3503,7 +3506,7 @@ export const events: EventType[] = [
     "stage": "Rasen in Aktion",
     "types": [
       "Brazilian",
-      "African"
+      "Afro"
     ],
     "sourceText": "Capoeira-Roda für Jugendliche und Erwachsene",
     "description": "Capoeira ist eine von afrikanischen Sklaven entwickelte Kampfkunst aus Brasilien. Nach 400 Jahren heute eine Kunst und Kultur mit Kampf, Musik und Akrobatik, viel Kameradschaft und einer Riesenmenge an Spaß!"
@@ -3550,7 +3553,7 @@ export const events: EventType[] = [
     "stage": "Klang Plaza",
     "types": [
       "Cuban",
-      "African"
+      "Afro"
     ],
     "sourceText": "Kubanische Rumba / Afrokubanische Musik",
     "description": "Alafia con Iré ist eine kubanische Musikgruppe in Berlin, die die Tradition der afrokubanischen Musik und insbesondere auch der kubanischen Rumba auf die Bühne bringt und auch eigene Kompositionen spielt."
@@ -3639,6 +3642,7 @@ export const events: EventType[] = [
     "artist": "PASCAL de Lacaze",
     "stage": "shantYtown",
     "types": [
+      "Caribbean",
       "Electro",
       "Reggae",
       "Performance"
@@ -3729,7 +3733,7 @@ export const events: EventType[] = [
     "stage": "Rasen in Aktion",
     "types": [
       "Brazilian",
-      "African",
+      "Afro",
       "Performance"
     ],
     "sourceText": "afro-brasilianische Percussion",
@@ -3745,7 +3749,7 @@ export const events: EventType[] = [
     "artist": "MaVert",
     "stage": "Sound Avenue",
     "types": [
-      "African",
+      "Afro",
       "Electro"
     ],
     "sourceText": "Afro electronic sounds"

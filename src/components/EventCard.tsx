@@ -24,7 +24,8 @@ export function EventCard({ event, saved, onToggleSaved }: EventCardProps) {
         {event.endTime ? <span>{event.time}-{event.endTime}</span> : <span>{event.time}</span>}
       </div>
       <h3>{event.name}</h3>
-      <p>{event.artist}</p>
+      {event.sourceText ? <p className="event-card__subtext">{event.sourceText}</p> : null}
+      {event.description ? <p className="event-card__description">{event.description}</p> : null}
       <div className="type-list" aria-label={`Types for ${event.name}`}>
         {event.types.map((type) => (
           <span key={type}>{type}</span>

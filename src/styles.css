@@ -365,7 +365,7 @@ p {
   border: 1px solid var(--line);
   border-left: 7px solid var(--coral);
   border-radius: 8px;
-  padding: 15px 15px 52px;
+  padding: 15px 15px 68px;
   background: var(--paper);
   box-shadow: 0 8px 22px rgba(58, 39, 13, 0.08);
   animation: card-in 260ms ease both;
@@ -443,16 +443,30 @@ p {
   line-height: 1.16;
 }
 
-.event-card p {
+.event-card__subtext {
+  margin-bottom: 8px;
+  color: #8a250f;
+  font-size: 0.92rem;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.event-card__description {
+  margin-bottom: 0;
   color: var(--muted);
-  line-height: 1.45;
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 .type-list {
+  position: absolute;
+  right: 60px;
+  bottom: 14px;
+  left: 15px;
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 16px;
+  margin-top: 0;
 }
 
 .type-list span {
