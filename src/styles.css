@@ -446,10 +446,9 @@ p {
   outline-offset: 3px;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .save-button:hover {
     transform: translateY(-1px) scale(1.03);
-    color: var(--coral);
   }
 }
 
@@ -566,6 +565,10 @@ p {
   display: none;
 }
 
+.filters__scroll-hint {
+  display: none;
+}
+
 .filters-overlay {
   display: none;
 }
@@ -612,6 +615,16 @@ p {
   .filters__scroll {
     max-height: calc(85dvh - 110px);
     overflow-y: auto;
+  }
+
+  .filters__scroll-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 800;
   }
 
   .results {
