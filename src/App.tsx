@@ -1,14 +1,16 @@
 import { useEffect, useMemo, useState } from "react";
 import { Sparkles, SlidersHorizontal } from "lucide-react";
+import { Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { events } from "./data/events";
-import { EventResults } from "./components/EventResults";
-import { FiltersPanel } from "./components/FiltersPanel";
+import { DatenschutzPage } from "./components/DatenschutzPage";
+import { EventsPage } from "./components/EventsPage";
 import { countGroupedEvents, defaultFilters, uniqueSorted, useEventGroups } from "./utils/filters";
 import { getEventLocationLabel } from "./utils/location";
 import { readSavedEventIds, writeSavedEventIds } from "./utils/savedEvents";
 import type { FilterState } from "./types";
 
 export function App() {
+  const location = useLocation();
   const [filters, setFilters] = useState(defaultFilters);
   const [savedEventIds, setSavedEventIds] = useState<string[]>(readSavedEventIds);
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -42,47 +44,60 @@ export function App() {
   const toggleSavedEvent = (eventId: string) => {
     setSavedEventIds((current) => (current.includes(eventId) ? current.filter((id) => id !== eventId) : [...current, eventId]));
   };
+  const isDatenschutzOpen = location.pathname === "/datenschutz";
 
   return (
     <div className="app-shell">
       <header className="site-header">
         <nav className="nav-wrap" aria-label="Main navigation">
-          <a className="brand" href="#top" aria-label="KdK Event Finder home">
+          <Link className="brand" to="/" aria-label="KdK Event Finder home">
             <Sparkles size={24} aria-hidden="true" />
             <span>KdK Event Finder</span>
-          </a>
+          </Link>
           <span className="event-window">22-25 May 2026</span>
         </nav>
       </header>
 
-      <main id="top" className="main-content">
-        <FiltersPanel
-          filters={filters}
-          visibleCount={visibleCount}
-          savedCount={savedEventIds.length}
-          days={days}
-          types={types}
-          stages={stages}
-          onUpdate={updateFilters}
-          onReset={() => setFilters(defaultFilters)}
-          mobileOpen={filtersOpen}
-          onMobileClose={() => setFiltersOpen(false)}
-        />
-
-        <EventResults eventGroups={eventGroups} visibleCount={visibleCount} savedEventIds={savedEventIdSet} onToggleSaved={toggleSavedEvent} />
+      <main id="top" className={`main-content${isDatenschutzOpen ? " main-content--single" : ""}`}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <EventsPage
+                filters={filters}
+                visibleCount={visibleCount}
+                savedCount={savedEventIds.length}
+                days={days}
+                types={types}
+                stages={stages}
+                onUpdate={updateFilters}
+                onReset={() => setFilters(defaultFilters)}
+                mobileOpen={filtersOpen}
+                onMobileClose={() => setFiltersOpen(false)}
+                eventGroups={eventGroups}
+                savedEventIds={savedEventIdSet}
+                onToggleSaved={toggleSavedEvent}
+              />
+            }
+          />
+          <Route path="/datenschutz" element={<DatenschutzPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
 
-      <button
-        className="filters-fab"
-        type="button"
-        onClick={() => setFiltersOpen(true)}
-        aria-label="Open filters"
-        aria-expanded={filtersOpen}
-        aria-controls="filters-panel"
-      >
-        <SlidersHorizontal size={18} aria-hidden="true" />
-        Filters
-      </button>
+      {!isDatenschutzOpen && (
+        <button
+          className="filters-fab"
+          type="button"
+          onClick={() => setFiltersOpen(true)}
+          aria-label="Open filters"
+          aria-expanded={filtersOpen}
+          aria-controls="filters-panel"
+        >
+          <SlidersHorizontal size={18} aria-hidden="true" />
+          Filters
+        </button>
+      )}
 
       <footer className="site-footer">
         <p>
@@ -91,6 +106,9 @@ export function App() {
         <p>
           Created independently by Andre Lopes. This app is not affiliated with, endorsed by, or officially related to the Karneval der Kulturen
           organization.
+        </p>
+        <p>
+          <Link to="/datenschutz">Datenschutz</Link>
         </p>
       </footer>
     </div>
