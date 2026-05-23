@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Sparkles, SlidersHorizontal } from "lucide-react";
+import { Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { events } from "./data/events";
 import { DatenschutzPage } from "./components/DatenschutzPage";
 import { EventsPage } from "./components/EventsPage";
@@ -9,11 +10,10 @@ import { readSavedEventIds, writeSavedEventIds } from "./utils/savedEvents";
 import type { FilterState } from "./types";
 
 export function App() {
-  const datenschutzHash = "#datenschutz";
+  const location = useLocation();
   const [filters, setFilters] = useState(defaultFilters);
   const [savedEventIds, setSavedEventIds] = useState<string[]>(readSavedEventIds);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [isDatenschutzOpen, setIsDatenschutzOpen] = useState(() => window.location.hash === datenschutzHash);
   const savedEventIdSet = useMemo(() => new Set(savedEventIds), [savedEventIds]);
   const eventGroups = useEventGroups(filters, savedEventIdSet);
   const days = useMemo(
@@ -32,13 +32,6 @@ export function App() {
   }, [savedEventIds]);
 
   useEffect(() => {
-    const handleHashChange = () => setIsDatenschutzOpen(window.location.hash === datenschutzHash);
-    handleHashChange();
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, [datenschutzHash]);
-
-  useEffect(() => {
     if (!filtersOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setFiltersOpen(false);
@@ -51,39 +44,45 @@ export function App() {
   const toggleSavedEvent = (eventId: string) => {
     setSavedEventIds((current) => (current.includes(eventId) ? current.filter((id) => id !== eventId) : [...current, eventId]));
   };
+  const isDatenschutzOpen = location.pathname === "/datenschutz";
 
   return (
     <div className="app-shell">
       <header className="site-header">
         <nav className="nav-wrap" aria-label="Main navigation">
-          <a className="brand" href="#top" aria-label="KdK Event Finder home">
+          <Link className="brand" to="/" aria-label="KdK Event Finder home">
             <Sparkles size={24} aria-hidden="true" />
             <span>KdK Event Finder</span>
-          </a>
+          </Link>
           <span className="event-window">22-25 May 2026</span>
         </nav>
       </header>
 
       <main id="top" className={`main-content${isDatenschutzOpen ? " main-content--single" : ""}`}>
-        {isDatenschutzOpen ? (
-          <DatenschutzPage />
-        ) : (
-          <EventsPage
-            filters={filters}
-            visibleCount={visibleCount}
-            savedCount={savedEventIds.length}
-            days={days}
-            types={types}
-            stages={stages}
-            onUpdate={updateFilters}
-            onReset={() => setFilters(defaultFilters)}
-            mobileOpen={filtersOpen}
-            onMobileClose={() => setFiltersOpen(false)}
-            eventGroups={eventGroups}
-            savedEventIds={savedEventIdSet}
-            onToggleSaved={toggleSavedEvent}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <EventsPage
+                filters={filters}
+                visibleCount={visibleCount}
+                savedCount={savedEventIds.length}
+                days={days}
+                types={types}
+                stages={stages}
+                onUpdate={updateFilters}
+                onReset={() => setFilters(defaultFilters)}
+                mobileOpen={filtersOpen}
+                onMobileClose={() => setFiltersOpen(false)}
+                eventGroups={eventGroups}
+                savedEventIds={savedEventIdSet}
+                onToggleSaved={toggleSavedEvent}
+              />
+            }
           />
-        )}
+          <Route path="/datenschutz" element={<DatenschutzPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
 
       {!isDatenschutzOpen && (
@@ -109,7 +108,7 @@ export function App() {
           organization.
         </p>
         <p>
-          <a href={datenschutzHash}>Datenschutz</a>
+          <Link to="/datenschutz">Datenschutz</Link>
         </p>
       </footer>
     </div>

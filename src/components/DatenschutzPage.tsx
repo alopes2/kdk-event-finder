@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function DatenschutzPage() {
   return (
     <section className="legal-page" aria-labelledby="datenschutz-title">
@@ -6,31 +8,17 @@ export function DatenschutzPage() {
       <h2>Verantwortlicher</h2>
       <p>Verantwortlich für diese Website ist: [Dein Name], [deine Kontakt-E-Mail].</p>
 
-      <h2>Webanalyse mit Umami</h2>
-      <p>Diese Website nutzt Umami Analytics, um die Nutzung der Seite in aggregierter Form auszuwerten und die Website zu verbessern.</p>
-
-      <h2>Zweck und Rechtsgrundlage</h2>
+      <h2>Umami Privacy Policy</h2>
       <p>
-        Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse). Unser berechtigtes Interesse
-        liegt in der statistischen Analyse und Verbesserung dieser Website.
-      </p>
-
-      <h2>Welche Daten verarbeitet werden</h2>
-      <p>
-        Umami setzt keine Tracking-Cookies und erstellt keine personenbezogenen Nutzerprofile. Erfasst werden technische Nutzungsdaten
-        wie aufgerufene Seiten, Referrer, Browsertyp, Gerätetyp und Zeitstempel. Die Auswertung erfolgt anonymisiert und aggregiert.
-      </p>
-
-      <h2>Empfänger der Daten</h2>
-      <p>
-        Der Dienst wird über Umami Cloud betrieben. Anbieter ist Umami Software Inc. Weitere Informationen finden Sie unter{" "}
-        <a href="https://umami.is" target="_blank" rel="noreferrer">
-          umami.is
+        Für die Webanalyse verwenden wir Umami Cloud. Die Datenschutzhinweise für diesen Dienst gelten direkt gemäß der offiziellen
+        Umami Privacy Policy unter{" "}
+        <a href="https://umami.is/privacy" target="_blank" rel="noreferrer">
+          umami.is/privacy
         </a>
         .
       </p>
 
-      <h2>Speicherdauer</h2>
+      <h2>Rechtsgrundlage</h2>
       <p>Die Daten werden nur so lange gespeichert, wie es für statistische Auswertungen und die Verbesserung der Website erforderlich ist.</p>
 
       <h2>Ihre Rechte</h2>
@@ -40,7 +28,7 @@ export function DatenschutzPage() {
       </p>
 
       <p>
-        <a href="/">Zurück zur Startseite</a>
+        <Link to="/">Zurück zur Startseite</Link>
       </p>
     </section>
   );
