@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { Sparkles, SlidersHorizontal } from "lucide-react";
 import { events } from "./data/events";
-import { EventResults } from "./components/EventResults";
-import { FiltersPanel } from "./components/FiltersPanel";
+import { DatenschutzPage } from "./components/DatenschutzPage";
+import { EventsPage } from "./components/EventsPage";
 import { countGroupedEvents, defaultFilters, uniqueSorted, useEventGroups } from "./utils/filters";
 import { getEventLocationLabel } from "./utils/location";
 import { readSavedEventIds, writeSavedEventIds } from "./utils/savedEvents";
@@ -66,57 +66,23 @@ export function App() {
 
       <main id="top" className={`main-content${isDatenschutzOpen ? " main-content--single" : ""}`}>
         {isDatenschutzOpen ? (
-          <section className="legal-page" aria-labelledby="datenschutz-title">
-            <h1 id="datenschutz-title">Datenschutzerklärung</h1>
-            <p>Diese Website nutzt Umami Analytics, um die Nutzung der Seite in aggregierter Form auszuwerten.</p>
-
-            <h2>Zweck und Rechtsgrundlage</h2>
-            <p>
-              Die Verarbeitung erfolgt zur Verbesserung der Website und Nutzererfahrung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO
-              (berechtigtes Interesse).
-            </p>
-
-            <h2>Welche Daten verarbeitet werden</h2>
-            <p>
-              Es werden keine Tracking-Cookies gesetzt. Erfasst werden technische Nutzungsdaten wie aufgerufene Seiten, Referrer,
-              Browsertyp, Gerätetyp und Zeitstempel. IP-Adressen werden nicht dauerhaft in personenbezogener Form gespeichert.
-            </p>
-
-            <h2>Empfänger der Daten</h2>
-            <p>
-              Der Dienst wird über Umami Cloud betrieben (<a href="https://umami.is" target="_blank" rel="noreferrer">umami.is</a>).
-            </p>
-
-            <h2>Speicherdauer</h2>
-            <p>Die Daten werden nur so lange gespeichert, wie es für statistische Auswertungen erforderlich ist.</p>
-
-            <h2>Ihre Rechte</h2>
-            <p>
-              Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Widerspruch gegen die
-              Verarbeitung im Rahmen der gesetzlichen Vorgaben.
-            </p>
-
-            <p>
-              <a href="#top">Zurück zur Startseite</a>
-            </p>
-          </section>
+          <DatenschutzPage />
         ) : (
-          <>
-            <FiltersPanel
-              filters={filters}
-              visibleCount={visibleCount}
-              savedCount={savedEventIds.length}
-              days={days}
-              types={types}
-              stages={stages}
-              onUpdate={updateFilters}
-              onReset={() => setFilters(defaultFilters)}
-              mobileOpen={filtersOpen}
-              onMobileClose={() => setFiltersOpen(false)}
-            />
-
-            <EventResults eventGroups={eventGroups} visibleCount={visibleCount} savedEventIds={savedEventIdSet} onToggleSaved={toggleSavedEvent} />
-          </>
+          <EventsPage
+            filters={filters}
+            visibleCount={visibleCount}
+            savedCount={savedEventIds.length}
+            days={days}
+            types={types}
+            stages={stages}
+            onUpdate={updateFilters}
+            onReset={() => setFilters(defaultFilters)}
+            mobileOpen={filtersOpen}
+            onMobileClose={() => setFiltersOpen(false)}
+            eventGroups={eventGroups}
+            savedEventIds={savedEventIdSet}
+            onToggleSaved={toggleSavedEvent}
+          />
         )}
       </main>
 
