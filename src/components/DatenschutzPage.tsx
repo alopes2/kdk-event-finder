@@ -6,7 +6,7 @@ export function DatenschutzPage() {
       <h1 id="datenschutz-title">Datenschutzerklärung</h1>
 
       <h2>Verantwortlicher</h2>
-      <p>Verantwortlich für diese Website ist: [Dein Name], [deine Kontakt-E-Mail].</p>
+      <p>Verantwortlich für diese Website ist: Andre Lopes, andrevitorlopes@gmail.com.</p>
 
       <h2>Umami Privacy Policy</h2>
       <p>
@@ -19,7 +19,10 @@ export function DatenschutzPage() {
       </p>
 
       <h2>Rechtsgrundlage</h2>
-      <p>Die Daten werden nur so lange gespeichert, wie es für statistische Auswertungen und die Verbesserung der Website erforderlich ist.</p>
+      <p>
+        Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse). Unser berechtigtes Interesse
+        liegt in der statistischen Analyse und Verbesserung dieser Website.
+      </p>
 
       <h2>Ihre Rechte</h2>
       <p>
